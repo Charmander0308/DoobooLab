@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+    hikari:
+      connection-timeout: 20000
+      initialization-fail-timeout: 0
+
+  jpa:
+    #전송 쿼리 확인
+    show-sql: true    #콘솔 로그 on/off
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+
+  security:
+    remember-me:
+      key: ${SPRING_SECURITY_REMEMBERME_KEY}
+
+jwt:
+  issuer: dooboolab.com
+  secret_key: ${JWT_SECRET}

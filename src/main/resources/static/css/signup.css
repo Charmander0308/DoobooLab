@@ -1,0 +1,35 @@
+.gradient-custom {
+    background: linear-gradient(to right, rgba(255, 251, 230, 1), rgba(254, 238, 229, 1))
+}
+
+.step-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 450px; /* 높이 고정 또는 min-height 지정 */
+}
+
+.step {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.step.active {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 2;
+}
+
+.step.exit-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.step.exit-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
